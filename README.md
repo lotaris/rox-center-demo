@@ -8,6 +8,7 @@
 git clone git@github.com:lotaris/rox-center-demo.git
 cd rox-center-demo
 bundle install
+rake db:migrate
 bundle exec rails server
 ```
 
