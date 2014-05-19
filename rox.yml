@@ -1,0 +1,7 @@
+
+project:
+  name: ROX Center Demo
+  version: 1.0.0
+  apiId: 206135588a98
+
+server: localhost

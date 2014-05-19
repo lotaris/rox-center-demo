@@ -42,6 +42,7 @@ gem 'spring',        group: :development
 
 group :development do
   gem 'thin'
+  gem 'quiet_assets'
 end
 
 group :test do
@@ -50,4 +51,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'rox-client-rspec'
 end

@@ -6,6 +6,9 @@
   .form-group
     %label.sr-only{ for: 'person_last_name' } First Name
     %input.form-control{ type: 'text', id: 'person_last_name', name: 'person[last_name]', placeholder: 'Last Name' }
+  .form-group
+    %label.sr-only{ for: 'person_age' } Age
+    %input.form-control{ type: 'text', id: 'person_age', name: 'person[age]', placeholder: 'Age', value: 18 }
   %button.btn.btn-primary{ type: 'submit' } Submit
 - if flash[:errors]
   %ul.errors
@@ -22,12 +25,14 @@
             %tr
               %th Last Name
               %th First Name
+              %th Age
               %th
           %tbody
             - @people.each do |person|
               %tr
                 %td= person.last_name.upcase
                 %td= person.first_name
+                %td= person.age
                 %td
                   = form_for person, method: :delete, html: { class: 'form-inline' } do
                     %button.btn.btn-xs.btn-danger{ type: 'submit' }

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519190214) do
+ActiveRecord::Schema.define(version: 20140519203529) do
 
   create_table "people", force: true do |t|
-    t.string   "first_name", limit: 50, null: false
-    t.string   "last_name",  limit: 50, null: false
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "first_name", limit: 50,              null: false
+    t.string   "last_name",  limit: 50,              null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "age",                   default: 18, null: false
   end
 
 end
