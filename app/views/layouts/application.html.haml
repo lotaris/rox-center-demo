@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title ROX Center Demo
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }
+  %body
+    .navbar.navbar-default.navbar-fixed-top{ role: 'navigation' }
+      .container-fluid
+        .navbar-header
+          %a.navbar-brand{ href: '/' } ROX Center Demo
+        %ul.nav.navbar-nav.navbar-right
+          %li= link_to 'GitHub', 'https://github.com/lotaris/rox-center-demo'
+          %li= link_to 'ROX Center on GitHub', 'https://github.com/lotaris/rox-center'
+    .container
+      = yield

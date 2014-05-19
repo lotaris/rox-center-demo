@@ -1,0 +1,34 @@
+%h1 Customer Database
+= form_for @person, html: { class: 'form-inline', role: 'form' } do
+  .form-group
+    %label.sr-only{ for: 'person_first_name' } First Name
+    %input.form-control{ type: 'text', id: 'person_first_name', name: 'person[first_name]', placeholder: 'First Name', autofocus: true }
+  .form-group
+    %label.sr-only{ for: 'person_last_name' } First Name
+    %input.form-control{ type: 'text', id: 'person_last_name', name: 'person[last_name]', placeholder: 'Last Name' }
+  %button.btn.btn-primary{ type: 'submit' } Submit
+- if flash[:errors]
+  %ul.errors
+    - flash[:errors].each do |msg|
+      %li= msg
+#database
+  - if @people.blank?
+    %p Nobody is registered
+  - else
+    .row
+      .col-md-6.col-xs-12
+        %table.table.table-striped
+          %thead
+            %tr
+              %th Last Name
+              %th First Name
+              %th
+          %tbody
+            - @people.each do |person|
+              %tr
+                %td= person.last_name.upcase
+                %td= person.first_name
+                %td
+                  = form_for person, method: :delete, html: { class: 'form-inline' } do
+                    %button.btn.btn-xs.btn-danger{ type: 'submit' }
+                      %span.glyphicon.glyphicon-trash

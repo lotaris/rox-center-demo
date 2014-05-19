@@ -1,0 +1,1 @@
+RoxCenterDemoProject::Application.config.secret_key_base = 'c8ba4004cf42059cd1f407ed4341b0dea921bc0da43e948cab40c8288dddd5c576ec674354c729329b5edd39468ea2d70dfe4f305dc836d355fced0d97316313'

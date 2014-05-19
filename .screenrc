@@ -1,0 +1,13 @@
+source $HOME/.screenrc
+
+screen -t db 1
+stuff "sqlite3 db/development.sqlite3\012"
+screen -t server 2
+stuff "bundle exec rails server\012"
+screen -t vim 3 $EDITOR -c GG
+screen -t zsh 4
+screen -t spec 5
+stuff "bundle exec rake"
+screen -t console 6
+stuff "bundle exec rails console\012"
+select vim
