@@ -51,4 +51,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
